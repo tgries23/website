@@ -10,7 +10,7 @@ navbar:
     - text: "About"
       href: about.html
     - text: "Blog"
-      href: blog.htm
+      href: blog.html
 theme: postcards.css
 site: distill::distill_website
 

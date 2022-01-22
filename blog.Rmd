@@ -1,4 +1,11 @@
 ---
-title: "Untitled"
-listing: posts
+title: "blog"
+description: |
+  A short description of the post.
+author:
+  - name: Taylor Gries
+date: 2022-01-21
+output:
+  distill::distill_article:
+    self_contained: false
 ---
