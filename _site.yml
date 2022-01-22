@@ -1,0 +1,16 @@
+name: "."
+title: "Taylor Gries"
+description:
+  Taylor Gries
+output_dir: "docs"
+navbar:
+  right:
+    - text: "Home"
+      href: index.html
+    - text: "About"
+      href: about.html
+    - text: "Blog"
+      href: blog.htm
+theme: postcards.css
+site: distill::distill_website
+

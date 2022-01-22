@@ -1,0 +1,19 @@
+[
+  {
+    "path": "posts/2022-01-21-welcome/",
+    "title": "welcome",
+    "description": "A short description of the post.",
+    "author": [
+      {
+        "name": "Taylor Gries",
+        "url": {}
+      }
+    ],
+    "date": "2022-01-21",
+    "categories": [],
+    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
+    "preview": {},
+    "last_modified": "2022-01-21T17:52:28-08:00",
+    "input_file": {}
+  }
+]
