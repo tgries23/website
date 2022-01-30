@@ -26,7 +26,7 @@ html {
   --fig-cap-size:    13px;
   /*-- Main font colors --*/
   --title-color:     #000000;
-  --header-color:    rgba(0, 0, 0, 0.8);
+  --header-color:    rgb(139,62,47);
   --body-color:      rgba(0, 0, 0, 0.8);
   --aside-color:     rgba(0, 0, 0, 0.6);
   --fig-cap-color:   rgba(0, 0, 0, 0.6);
