@@ -40,9 +40,9 @@ html {
 /*-- ARTICLE METADATA --*/
 d-byline {
   --heading-size:    0.6rem;
-  --heading-color:   rgba(0, 0, 0, 0.5);
+  --heading-color:   rgb(139,62,47);
   --body-size:       0.8rem;
-  --body-color:      rgba(0, 0, 0, 0.8);
+  --body-color:      rgb(139,62,47);
 }
 
 /*-- ARTICLE TABLE OF CONTENTS --*/
