@@ -1,12 +1,19 @@
 ---
-title: "about"
-description: |
-  A short description of the post.
-author:
-  - name: Taylor Gries
-date: 2022-01-21
+title: "about me"
 output:
   distill::distill_article:
     self_contained: false
 ---
+
+As a child, I used to sit with my head out of the window on long road trips, scribbling the mountain tops with my fingertips. It was cathartic for my young mind, contemplating what I had learned during my environmental education lessons at camp in Rocky Mountain National Park - my family visited Colorado every year from the Midwest. Between crafting water filtration devices out of rocks or painting using leaves, I learned to love the natural environment through direct connections with others and the world around me. These creative and welcoming experiences in outdoor education led to me studying environmental engineering.
+
+My interest in corporate environmental management in the apparel industry began after I was selected to join Marquette University’s newly formed sustainability committee to strategize long-term climate goals in 2016. While collaborating alongside the university's leaders and peers who shared my passion, I realized that no singular institution, no matter how progressive, how passionate, or how well-funded, could solve the climate crisis alone. Transforming our current system will require partnership across organizations. Change not only requires but also demands collaboration and innovation which are strengthened by an analytical mindset and a scientific approach. I began to understand corporate influence and industry-wide collaboration during my contract role on Patagonia’s Social and Environmental Responsibility team. At Patagonia, I developed the strategy and methodology surrounding 2025 zero-waste goals. I also supported Patagonia’s carbon neutrality and renewable energy goals by serving as the focal point for metric and inventory aggregation, researching industry best practices, and streamlining carbon accounting methodology. Lastly, I helped manage Patagonia's Higg Brand & Retailer Module self-assessment, Green-e® certification, and Science Based Target Initiative development. 
+
+I have also gained experience in energy efficiency, benchmarking, and data analysis in my consulting roles. While in a consulting role in Colorado, I received the honor to attend and present at the Sustainable Denver Summit where I spoke about the success of the Energize Denver program. Within one year of reporting for buildings greater than 50,000 square feet, the city reduced its energy consumption by 4.5%, totaling $13.5 million in energy cost savings. While managing this required program, I engaged and educated program members through supporting both web-based and in-person trainings, wrote up website content, and created data visualizations. While at Partner Energy in Los Angeles, I  managed client's energy and water benchmarking, utility data collection, and analysis for energy performance programs such as Fannie Mae and Freddie Mac Green loans, HUD Annual Benchmarking, and ENERGY STAR Certification. 
+
+As much as I enjoy my career is sustainability, I enjoy some pretty cool hobbies as well. I like to ski, snowboard, climb, hike, bike, and as of recent, SCUBA diving. I want to be outside as much as possible. I also believe no act of kindness is ever wasted, and try to carry this above anything else. 
+
+
+
+
 

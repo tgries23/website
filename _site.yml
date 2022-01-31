@@ -5,11 +5,15 @@ description:
 output_dir: "docs"
 navbar:
   right:
-    - text: "Home"
+    - text: "home"
       href: index.html
-    - text: "About"
+    - text: "about"
       href: about.html
-    - text: "Blog"
+    - text: "resume"
+      href: resume.html
+    - text: "portfolio"
+      href: portfolio.html
+    - text: "blog"
       href: blog.html
 theme: postcards.css
 site: distill::distill_website

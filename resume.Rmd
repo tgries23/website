@@ -1,0 +1,76 @@
+---
+title: "resume"
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+# Bio
+
+Taylor is a corporate sustainability professional with experience in project management focused on greenhouse gas accounting, energy efficiency, and waste reduction. Through her experience at Patagonia and in the consulting world, she has developed a strong background in data management, visualization, and analytics as it relates to climate goals. On top of having a technical environmental engineering background, she is also skilled at building relationships across an organization to catalyze climate goals. Taylor received her B.S. Environmental Engineering from Marquette University. 
+
+# Education
+
+**Bren School of Environmental Science & Management – The University of California, Santa Barbara** | Santa Barbara, CA
+
+*Corporate Environmental Management Specialization | Strategic Environmental Communication and Media*
+
+M.S. of Environmental Science and Management | September 2021 - May 2023
+
+**Marquette University** | Milwaukee, WI 
+
+B.S. in Environmental and Civil Engineering | September 2013 - June 2017
+
+# Experience
+
+**Senior Sustainability Coordinator – Partner Energy, Los Angeles, CA (10/20–7/21)**
+
+-Managed the Quality Control (QC) of 200+ Fannie Mae and Freddie Mac Green loan energy reports which led to additional financing for green building improvements
+
+-Executed the data collection, analysis, and validation of energy and water data for a portfolio for 30+ multifamily buildings and 6,485 units spanning six states; incorporated analysis for continued monitoring of 30% reduction of energy and water consumption for green loan requirements
+
+-Completed 5+ ENERGY STAR® building certification projects to quantify client’s green improvements
+
+**Environmental Responsibility Consultant – Patagonia, Ventura, CA (12/19–5/20)**
+
+-Remodeled Patagonia’s internal environmental metrics analytics platform for data spanning 15+ countries for automated Scope 1 and 2 emissions evaluations which contributed to Patagonia’s 2020 Renewable Energy Goal and 2025 Carbon Neutrality Goal
+
+-Developed an in-depth energy analysis of Patagonia's international footprint to analyze gaps in data collection and streamline future carbon accounting processes 
+
+-Mobilized an internal team of five to create Patagonia’s 2025 zero waste strategy, developed comprehensive waste measurement and audit methodology, rollout timeline, and staff resources
+
+-Managed Patagonia's Higg Brand & Retailer Module self-assessment, Green-e® certification, and Science Based Target Initiative development to ensure brand certifications met critical deadlines
+
+**Sustainability Consultant – Overlay Consulting, Denver, CO (4/18–12/19)**
+
+-Managed the Energize Denver Benchmarking program which resulted in an energy reduction of 4.5 percent from 2016 to 2017, totaling $13.5 million in energy cost savings
+
+-Designed automated building energy tracking through individualized Salesforce platforms for five U.S. cities totaling 6,208 buildings and 525,580,154 square feet for government-mandated energy programs
+
+-Oversaw Denver and Boulder's Help Center, supported both web-based and in-person trainings, and completed routine weekly data quality checks to ensure accurate compliance percentages
+
+-Authored an eight-page article for the Colorado Real Estate Journal on the Energize Denver program success and presented my findings at the 2018 Sustainable Denver Summit for an audience of 50 people
+
+# Additional Experiences
+
+**Environmental Studies Teaching Assistant – UC Santa Barbara, Santa Barbara, CA (9/21 - Current)**
+
+-Spring 2022: Environmental Chemistry II
+
+-Winter 2022: Environmental Chemistry I
+
+-Fall 2021: Building Sustainable Communities: From Environmental Injustice to Just Sustainability and Regeneration
+
+**Consultant – Seed Consulting, Orange County, CA (8/20-11/20)**
+
+**Environmental Field Technician – Urban GIS, Chicago, IL (2/18 – 3/18)**
+
+**Research and Development Intern – Pentair, Milwaukee, WI (5/16-8/16)**
+
+
+# Skills
+
+**Computer:** Microsoft Office (Word, Excel and PowerPoint), R-Studio, Salesforce, CR360, Engie Impact 
+
+**Project and Data Management Tools:** Tableau Prep and Desktop, Trello, Microsoft Teams
+
