@@ -4,7 +4,7 @@ description: |
   A short description of the post.
 author:
   - name: Taylor Gries
-date: 2022-01-21
+date: 2022-01-30
 output:
   distill::distill_article:
     self_contained: false
@@ -13,7 +13,6 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
-
 ```
 
 Distill is a publication format for scientific and technical writing, native to the web.

@@ -1,5 +1,6 @@
 ---
 title: "blog"
+listing: posts
 output:
   distill::distill_article:
     self_contained: false

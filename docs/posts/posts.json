@@ -1,1 +1,19 @@
-[]
+[
+  {
+    "path": "posts/2022-01-30-welcome-post/",
+    "title": "welcome post",
+    "description": "A short description of the post.",
+    "author": [
+      {
+        "name": "Taylor Gries",
+        "url": {}
+      }
+    ],
+    "date": "2022-01-30",
+    "categories": [],
+    "contents": "\n\n\n\n",
+    "preview": {},
+    "last_modified": "2022-01-30T17:08:54-08:00",
+    "input_file": {}
+  }
+]
