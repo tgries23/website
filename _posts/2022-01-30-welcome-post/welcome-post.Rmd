@@ -1,7 +1,7 @@
 ---
-title: "Welcome"
+title: "welcome post"
 description: |
-  A deeper look into the apparel industry
+  a bit more about me
 author:
   - name: Taylor Gries
 date: 2022-01-30
@@ -11,3 +11,4 @@ output:
 ---
 
 
+Taylor Gries graduated from Marquette University in 2017 with a Bachelor of Science in Civil and Environmental Engineering. Taylor is a natural problem-solver and exercised these skills through her technical degree and love for climbing. She helped co-found Marquette's Rock Climbing Club which enriched her love for the outdoors. She moved to Denver to chase the mountains and to pursue a career in sustainability. Taylor worked for Overlay Consulting, where she was contracted by both the City of Denver and the City of Boulder to design and manage their building energy efficiency programs. In 2018, she was invited to speak at the Sustainable Denver Summit on the success of the Energize Denver program, where the city reported a 4.5% reduction in city energy use. Taylor, being drawn to sustainable outdoor apparel, accepted a position with Patagonia's Environmental Responsibility team in Ventura, CA. She supported Patagonia’s carbon neutrality and renewable energy goals by serving as the focal point for metric and inventory aggregation and streamlining carbon accounting methodology. Taylor also accelerated progress towards Patagonia’s zero waste goal through developing the program strategy and methodology. At the Bren School, Taylor is specializing in corporate environmental management with a focus in Strategic Environmental Communication and Media. Her goal is to create regenerative systems in a corporate environment that could design waste and pollution out of systems altogether in the apparel industry. 
