@@ -6,13 +6,19 @@ links:
     url: "https://www.linkedin.com/in/taylor-gries/"
   - label: GitHub
     url: "https://github.com/tgries23"
+  - label: tgries@bren@ucsb.edu
+    url: "mailto: tgries@bren.ucsb.edu"
 site: distill::distill_website
 output:
   postcards::jolla
 ---
  
 
-Howdy! I am a sustainability professional looking to solve problems in the apparel industry. I received a Bachelors of Science in Environmental Engineering from Marquette University back in 2017. I gained experience in sustainability consulting after school before joining Patagonia's Environmental Responsibility team. At the UCSB Bren School of Environmental Science and Management, I am specializing in corporate environmental management with a focus in strategic environmental communication and media. My goal is to create regenerative systems in a corporate environment that could design waste and pollution out of systems altogether. Take a look around! 
+Howdy! 
+
+I am a sustainability professional looking to solve problems in the apparel industry. I received a Bachelors of Science in Environmental Engineering from Marquette University back in 2017. I gained experience in sustainability consulting after school before joining Patagonia's Environmental Responsibility team. At the UCSB Bren School of Environmental Science and Management, I am specializing in corporate environmental management with a focus in strategic environmental communication and media. My goal is to create regenerative systems in a corporate environment that could design waste and pollution out of systems altogether. 
+
+Take a look around! 
 
 
 
