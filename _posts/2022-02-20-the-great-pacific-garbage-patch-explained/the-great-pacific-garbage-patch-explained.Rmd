@@ -1,0 +1,29 @@
+---
+title: "The Great Pacific Garbage Patch Explained"
+description: |
+  Applying Earth System Science Principles to the Great Pacific Garbage Patch.
+author:
+  - name: Taylor Gries
+date: 2022-02-20
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+  The Great Pacific Garbage Patch is a copious amount of waste that has stockpiled over time in the Pacific Ocean. A 27-year old from the Netherlands named Boyan Slat founded The Ocean Cleanup, a nonprofit to tackle the Great Pacific Garbage Patch. He created a half-mile-long trash-trapping system named "Jenny" with the goal to collect data and also collect trash - about 63,000 lbs to be exact in late July. Jenny completed its testing phase and has made nine trash extractions in its 12-week cleanup phase, collecting nearly 20,000 lbs of trash in one extraction. The goal is “to deploy enough cleaning systems to reduce the size of the Great Pacific Garbage Patch by 50% every five years and to initiate a 90% reduction in floating ocean plastic by 2040”. According to The Ocean Cleanup, the patch covers an area twice the size of Texas or three times the size of France and there could contain 1.8 trillion pieces of plastic; however, NOAA has said it can be hard to get a true estimate of this due to constantly changing borders and content. The Ocean Cleanup is working on a larger-scale cleaning system to be released in the summer of 2022. The founder projects that 10 full-scale cleaning systems will be needed to clean the patch at a rate of 20,000 tons per year. This would mean the patch would be reduced by 50% in five years. The Ocean Cleanup says “95% of the plastic it collects can be recycled” and they are working on finding solutions to upcycle the collected trash through unique partnerships. One of the biggest challenges for The Ocean Cleanup is funding. Upcycling ocean waste is one stream of income, but the organization relies on philanthropic, commercial, and governmental donations/sponsorships.
+
+  The Great Pacific Garbage Patch is essentially a garbage vortex located in the middle of the northern Pacific Ocean. The patch is split into two sections, the Eastern and Western Garbage Patch, which covers the coasts of Hawaii to California and from the Hawaiian islands to Japan. The garbage patch forms from trash merging with the North Pacific Subtropical Convergence Zone. This is where warm water from the South Pacific intersects with colder water from the Arctic, resulting in a vortex that circulates the accumulated garbage (American Oceans, 2021).  Convergence results from the combined effects of the wind-driven surface-ocean currents, Earth's rotation, and, ultimately, friction. The entire Great Pacific Garbage Patch is bounded by the North Pacific Subtropical Gyre. Gyres are large systems of swirling ocean currents. The gyres are areas of low pressure that spin clockwise around but are steady in the center similar to a hurricane. The North Pacific Subtropical Gyre is formed by four currents rotating clockwise around an area of 20 million square kilometers: the California current, the North Equatorial current, the Kuroshio current, and the North Pacific current (National Geographic, 2012). Since most plastics are not biodegradable, they keep accumulating over time, breaking down into microplastics. These plastics are harmful to marine life and disturb marine food webs in the gyre.
+
+# References:
+
+“Great Pacific Garbage Patch.” National Geographic Society, National Geographic, 9 Oct. 2012, https://www.nationalgeographic.org/encyclopedia/great-pacific-garbage-patch/.
+
+“What Caused the Great Pacific Garbage Patch?” American Oceans, American Oceans, 26 Feb. 2021, https://www.americanoceans.org/blog/how-great-pacific-garbage-patch-created/. 
+
+
+

@@ -10,6 +10,6 @@ output:
     self_contained: false
 ---
 
-
+<img src="hike.jpg" />
 
 I graduated from Marquette University in 2017 with a Bachelor of Science in Civil and Environmental Engineering. I am a natural problem-solver and exercised these skills through my technical degree and love for climbing. I helped co-found Marquette's Rock Climbing Club which enriched my love for the outdoors. I then moved to Denver to chase the mountains and to pursue a career in sustainability. I worked for Overlay Consulting, where I was contracted by both the City of Denver and the City of Boulder to design and manage their building energy efficiency programs. In 2018, I was invited to speak at the Sustainable Denver Summit on the success of the Energize Denver program, where the city reported a 4.5% reduction in city energy use. Being drawn to sustainable outdoor apparel, I accepted a position with Patagonia's Environmental Responsibility team in Ventura, CA. I supported Patagonia’s carbon neutrality and renewable energy goals by serving as the focal point for metric and inventory aggregation and streamlining carbon accounting methodology. I also accelerated progress towards Patagonia’s zero waste goal through developing the program strategy and methodology. At the Bren School, I am specializing in corporate environmental management with a focus in Strategic Environmental Communication and Media. My goal is to create regenerative systems in a corporate environment that could design waste and pollution out of systems altogether in the apparel industry. 

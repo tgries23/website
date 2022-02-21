@@ -16,5 +16,6 @@ navbar:
     - text: "blog"
       href: blog.html
 theme: postcards.css
-site: distill::distill_website
+primary-background-color: "#F5F5DC"
+site: distill::distill_article
 

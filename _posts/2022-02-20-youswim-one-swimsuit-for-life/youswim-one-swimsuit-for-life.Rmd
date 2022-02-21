@@ -1,0 +1,37 @@
+---
+title: "Youswim: One Swimsuit for Life"
+description: |
+  A look into the brand Youswim and their competitive advantage.
+author:
+  - name: Taylor Gries
+date: 2022-02-20
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+  This past year, a new social media star emerged - one that offers opinions on clothing sizes on the internet. One example of this internet phenomenon is Remi Bader. She is a 26-year old that has gained more than 1.4 million followers on the social media platform Tik Tok (Farizan, 2021). She offers comic relief on the topic of inconsistent sizing among popular brands for plus-size women and highlights the struggle many women face with weight gain/loss due to hormones, pregnancy, health conditions, etc. A study concludes that even imagining trying on a swimsuit will worsen women’s moods (Pappas, 2012). Brands like Youswim offer relief to this problem. The brand offers four styles of seemingly simple bathing suit designs in a small selection of colors, but the beauty of their product is that the swimsuit fits a size 2-14. Youswim increases customers’ willingness to pay and lowers costs by creating a long-term, “one-size” investment for women which aligns with the brand’s ability to create an inclusive network of women that promote the brand. 
+
+  Youswim’s product inherently increases customers’ willingness to pay which drives down production costs simultaneously. The brand currently sells one swimsuit in twelve colors and four styles. One can first argue that the customer is willing to pay more because they technically only need one swimsuit (if maintained well) for the rest of their life. This is a thought inconceivable by most since the fashion industry has been created on the foundation of continuously buying more as trends go in or out of style. Youswim defies the norm with its timeless, high-quality product. Since customers only need to buy one swimsuit, they would theoretically be open to paying more for the one-time investment instead of a new swimsuit every season. In fact, the brand saves money for the customer - instead of paying hundreds of dollars over a few years for swimsuits, they only need to spend $140 on one. This in turn creates a unique synergy with lowering production costs. Typically swimsuit brands need to create a swimsuit in 14 - 16 sizes, each in different patterns and colors. If a certain size or color does not sell, then the swimsuit will go on sale, impacting profits. Having one consistent swimsuit made would most likely save the brand money in production, and it would save time with inventory planning as well. 
+
+  The main barrier to entry is the network of marketers Youswim has able to create through the “magic” of its product. When most people hear about a swimsuit that fits twelve sizes, they don’t believe it. It takes seeing others, who are a range of sizes, trying it on before their eyes to believe the product works. When one first feels the product, the material is thick and shrunken in to look like it would fit only a size extra-small. It takes trying on the swimsuit or seeing others try on the swimsuit to be amazed. Once someone feels the magic of the swimsuit themselves, they become a part of the network that passes the amazement on to others in their circle. This network continues to outwardly grow as the topic of inclusive sizing becomes more mainstream in the apparel industry. The brand also highlights diversity, inclusivity, and sustainability that creates intangible value for their target customer-based - typically these issues intersect for a customer who values inclusive sizing. This is useful to the brand because the networkers act as free marketing, potentially lowering overall marketing costs. 
+
+  Although Youswim’s product is innovative and presumably cost-effective, there are a few issues that could harm its long-term profitability. First, there are no known trademarks on the material or swimsuit design. Also, the brand has a high, but achievable, buy-in because customers can be skeptical of the fit. So, there is no guarantee that another company won’t try to reproduce Youswim's model. Youswim has struck a balance between encompassing inclusivity, sustainability, and diversity in its brand which is largely relevant to today’s customer base’s value, but the real value comes from the strong network already in motion. Based on the model that they sell a “swimsuit for life”, they should be constantly targeting new customers. Youswim achieves alignment in its value chain through inclusive sizing because it opens up the pathway to consistent new networks. Youswim is not a brand that only fits one type of body, it is a swimsuit for all. So when one person wears a Youswim swimsuit in public, any women no matter their size, is a potential customer. I believe this is what will keep them profitable in the future. Even if another brand copied every detail from Youswim's strategy, they would still need to put a lot of time and effort into building that network that Youswim already has acquired. Although another brand can eventually gain a customer base, Youswim will already be one step ahead.
+
+  Although there are brands that provide one-size clothing, there is no brand currently that provides a guaranteed lifetime fit on a swimsuit. Swimsuits have been a major point of frustration for women because of sizing. Some women end up having to buy new swimsuits each season, which ultimately leads to more consumption, waste, and frustration. Youswim has been able to tap into these customers’ specific needs, increasing willingness to pay more for one long-term investment. This in turn helps Youswim as a business by lowering costs and creating a competitive advantage through a network of brand supporters. If one influencer gained 1.4 million followers on the topic of inclusive sizing alone, Youswim is addressing an important, relevant problem. 
+
+
+
+# References
+
+1. Farizan, D. (2021, May 20). TikTok star's 'realistic clothing hauls' are all about hilarious brutal honesty. Today. Retrieved October 17, 2021, from https://www.today.com/tmrw/remi-bader-s-realistic-clothing-hauls-are-hilarious-ode-loving-t218921
+
+2. Pappas, S. (2012, April 23). Trying on Swimsuits Really Is the Worst, Study Shows. Live Science. Retrieved October 17, 2021, from https://www.livescience.com/19842-swimsuit-body-image.html
+
+
+

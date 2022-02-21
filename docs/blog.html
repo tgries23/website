@@ -106,7 +106,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","image","listing","output"]}},"value":[{"type":"character","attributes":{},"value":["blog"]},{"type":"character","attributes":{},"value":["taylor2.jpeg"]},{"type":"character","attributes":{},"value":["posts"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","listing","output"]}},"value":[{"type":"character","attributes":{},"value":["blog"]},{"type":"character","attributes":{},"value":["posts"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2129,6 +2129,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   @import url('https://fonts.googleapis.com/css2?family=Amiri');
   @import url('https://fonts.googleapis.com/css2?family=Bitter');
   @import url('https://fonts.googleapis.com/css2?family=DM+Mono');
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@100;400&display=swap');
 
   html {
     /*-- Main font sizes --*/
@@ -2146,13 +2147,13 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     /*-- Specify custom fonts ~~~ must be imported above   --*/
     --heading-font:    "Amiri", serif;
     --mono-font:       "DM Mono", monospace;
-    --body-font:       "Bitter", sans-serif;
+    --body-font:       "Roboto Serif", sans-serif;
     --navbar-font:     "Amiri", serif;
   }
 
   /*-- ARTICLE METADATA --*/
   d-byline {
-    --heading-size:    0.9rem;
+    --heading-size:    0.6rem;
     --heading-color:   rgb(255, 235, 205, max = 255);
     --body-size:       0.8rem;
     --body-color:      rgb(205, 91, 69, max = 255);
@@ -2160,7 +2161,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   /*-- ARTICLE TABLE OF CONTENTS --*/
   .d-contents {
-    --heading-size:    30px;
+    --heading-size:    18px;
     --contents-size:   13px;
   }
 
@@ -2203,6 +2204,22 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   d-article a {
     border-bottom: 2px solid #ffd8db;
     text-decoration: none;
+  }
+
+    body {
+    background-color: #F5F5DC;
+  }
+
+  d-title p {
+      font-weight: 300;
+      font-size: 1.2rem;
+      line-height: 1.55em;
+      grid-column: text;
+      color: #F5FFFA;
+  }
+
+  .smaller { font-size:50%; }
+
   }</style>
   <style type="text/css">
   /* base style */
@@ -2539,6 +2556,40 @@ function init_posts_list() {
 <div class="posts-container posts-apply-limit l-page">
 <div class="posts-list">
 <h1 class="posts-list-caption" data-caption="blog">blog</h1>
+<a href="posts/2022-02-20-youswim-one-swimsuit-for-life/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<div class="metadata">
+<div class="publishedDate">Feb. 20, 2022</div>
+<div class="dt-authors">
+<div class="dt-author">Taylor Gries</div>
+</div>
+</div>
+<div class="thumbnail">
+<img/>
+</div>
+<div class="description">
+<h2>Youswim: One Swimsuit for Life</h2>
+<div class="dt-tags"></div>
+<p>A look into the brand Youswim and their competitive advantage.</p>
+</div>
+</a>
+<a href="posts/2022-02-20-the-great-pacific-garbage-patch-explained/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<div class="metadata">
+<div class="publishedDate">Feb. 20, 2022</div>
+<div class="dt-authors">
+<div class="dt-author">Taylor Gries</div>
+</div>
+</div>
+<div class="thumbnail">
+<img/>
+</div>
+<div class="description">
+<h2>The Great Pacific Garbage Patch Explained</h2>
+<div class="dt-tags"></div>
+<p>Applying Earth System Science Principles to the Great Pacific Garbage Patch.</p>
+</div>
+</a>
 <a href="posts/2022-01-30-welcome-post/" class="post-preview">
 <script class="post-metadata" type="text/json">{"categories":[]}</script>
 <div class="metadata">
@@ -2547,9 +2598,7 @@ function init_posts_list() {
 <div class="dt-author">Taylor Gries</div>
 </div>
 </div>
-<div class="thumbnail">
-<img/>
-</div>
+<div class="thumbnail"></div>
 <div class="description">
 <h2>welcome post</h2>
 <div class="dt-tags"></div>

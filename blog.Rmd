@@ -1,9 +1,9 @@
 ---
 title: "blog"
-image: "taylor2.jpeg"
 listing: posts
 output:
   distill::distill_article:
     self_contained: false
+
 ---
 

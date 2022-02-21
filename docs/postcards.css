@@ -16,6 +16,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Amiri');
 @import url('https://fonts.googleapis.com/css2?family=Bitter');
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@100;400&display=swap');
 
 html {
   /*-- Main font sizes --*/
@@ -33,13 +34,13 @@ html {
   /*-- Specify custom fonts ~~~ must be imported above   --*/
   --heading-font:    "Amiri", serif;
   --mono-font:       "DM Mono", monospace;
-  --body-font:       "Bitter", sans-serif;
+  --body-font:       "Roboto Serif", sans-serif;
   --navbar-font:     "Amiri", serif;
 }
 
 /*-- ARTICLE METADATA --*/
 d-byline {
-  --heading-size:    0.9rem;
+  --heading-size:    0.6rem;
   --heading-color:   rgb(255, 235, 205, max = 255);
   --body-size:       0.8rem;
   --body-color:      rgb(205, 91, 69, max = 255);
@@ -47,7 +48,7 @@ d-byline {
 
 /*-- ARTICLE TABLE OF CONTENTS --*/
 .d-contents {
-  --heading-size:    30px;
+  --heading-size:    18px;
   --contents-size:   13px;
 }
 
@@ -90,4 +91,20 @@ ul > li::marker {
 d-article a {
   border-bottom: 2px solid #ffd8db;
   text-decoration: none;
+}
+
+  body {
+  background-color: #F5F5DC;
+}
+
+d-title p {
+    font-weight: 300;
+    font-size: 1.2rem;
+    line-height: 1.55em;
+    grid-column: text;
+    color: #F5FFFA;
+}
+
+.smaller { font-size:50%; }
+
 }

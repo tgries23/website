@@ -6,11 +6,11 @@ links:
     url: "https://www.linkedin.com/in/taylor-gries/"
   - label: GitHub
     url: "https://github.com/tgries23"
-  - label: tgries@bren@ucsb.edu
+  - label: tgries@bren.ucsb.edu
     url: "mailto: tgries@bren.ucsb.edu"
 site: distill::distill_website
 output:
-  postcards::jolla
+  postcards::trestles
 ---
  
 
@@ -20,6 +20,7 @@ I am a sustainability professional looking to solve problems in the apparel indu
 
 
 Take a look around! 
+
 
 
 
