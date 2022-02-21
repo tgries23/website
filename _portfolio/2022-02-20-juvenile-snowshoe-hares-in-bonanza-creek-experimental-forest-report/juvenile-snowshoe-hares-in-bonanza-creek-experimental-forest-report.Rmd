@@ -1,7 +1,7 @@
 ---
 title: "Juvenile Snowshoe Hares in Bonanza Creek Experimental Forest Report"
 description: |
-  "This report provides an exploratory overview of the differences in juvenile Snowshoe hares in Bonanza Creek Experimental Forest. For ESM 206."
+  This report provides an exploratory overview of the differences in juvenile Snowshoe hares in Bonanza Creek Experimental Forest. For ESM 206.
 author:
   - name: Taylor Gries
 date: 2022-02-20

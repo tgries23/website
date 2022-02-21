@@ -10,7 +10,7 @@ output:
 
 # Bio
 
-Taylor is a corporate sustainability professional with experience in project management focused on greenhouse gas accounting, energy efficiency, and waste reduction. Through her experience at Patagonia and in the consulting world, she has developed a strong background in data management, visualization, and analytics as it relates to climate goals. On top of having a technical environmental engineering background, she is also skilled at building relationships across an organization to catalyze climate goals. Taylor received her B.S. Environmental Engineering from Marquette University. 
+Taylor is a corporate sustainability professional with experience in project management focused on greenhouse gas accounting, energy efficiency, and waste reduction. Through her experience at Patagonia and in the consulting world, she has developed a strong background in data management, visualization, and analytics as it relates to climate goals. On top of having a technical environmental engineering background, she is also skilled at building relationships across an organization to catalyze climate goals. Taylor received her B.S. Environmental Engineering from Marquette University. Taylor is pursuing a master's at the UCSB Bren School, where she is specializing in corporate environmental management with a focus in Strategic Environmental Communication and Media.
 
 # Education
 
