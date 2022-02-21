@@ -1,0 +1,250 @@
+---
+title: "Juvenile Snowshoe Hares in Bonanza Creek Experimental Forest Report"
+description: |
+  "This report provides an exploratory overview of the differences in juvenile Snowshoe hares in Bonanza Creek Experimental Forest. For ESM 206."
+author:
+  - name: Taylor Gries
+date: 2022-02-20
+output:
+  distill::distill_article:
+    self_contained: false
+    code_folding: hide 
+---
+
+### 1. Overview
+
+This report provides an exploratory overview of the differences in juvenile Snowshoe hares in Bonanza Creek Experimental Forest through exploring annual hare trap counts between 1999 and 2012 and female and male juvenile hare weights in the following grids: Bonanza Riparian, Bonanza Mature, and Bonbs. This report also explores the relationship between juvenile hare weight and hind foot length. Bonanza Creek LTER is part of the US Long Term Ecological Research Network. The Bonanza Creek Experimental Forest (BCEF) was established in 1963 is a 50 km^2 experimental forest located approximately 20 km southwest of Fairbanks, Alaska (Kielland et al. 2017). Through data wrangling, data visualization, test sampling, summary statistics, and regression calculation, this report provides an exploratory analysis of juvenile Snowshoe hares.
+ 
+
+### 2. Data and methods
+
+Knut Kielland, Stuart F. Chapin, and Roger W. Ruess conducted capture-recapture studies of snowshoe hares at 5 locales in the Tanana Valley, from Tok in the east to Clear in the west from 1999 to 2012. The data contain observations for adult and juvenile Snowshoe hares (Lepus americanus) (Kielland et al. 2017). The initial investigation began with visualizing annual juvenile snowshoe hare traps to understand the population size, maximum and minimum counts, mean, and general trends. There is a general downwards trend in the number of juvenile hare trappings, especially between the years 2000 - 2001. This report also explores juvenile hare weights by sex and grid by finding the mean, standard deviation, and sample size. Weight between female and male hares was compared by two-sample t-tests using a significance level ($\alpha$) of 0.05. Linear regression explored the relationship between hare weight and hind foot length. All analyses are in R version 4.0.2 using RStudio version 1.3.1056.
+
+```{r setup, message =FALSE, warning = FALSE, echo = TRUE, error= TRUE}
+# Attach packages
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(here)
+library(janitor)
+library(lubridate)
+library(broom)
+library(effsize)
+library(broom)
+library(kableExtra)
+library(ggbeeswarm)
+```
+
+### 3. Preliminary results
+
+#### A. Juvenile Snoeshow hare initial investigation
+
+```{r, warning = FALSE, message = FALSE, error = TRUE, echo = TRUE}
+# Read in data
+bonanza_hares <- read_csv(here("data", "bonanza_hares.csv"))
+```
+
+```{r}
+bonanza_hares_count <- bonanza_hares %>% # Clean and wrangle data
+  filter (age == "j") %>%
+  mutate(date_new = mdy(date)) %>%
+  mutate(year = year(date_new)) %>%
+  group_by(year) %>%
+  count(year)
+
+# Create graph
+ggplot(data = bonanza_hares_count, aes(x = year, y = n)) +
+  geom_col(color = "gray20",
+           fill = "salmon1",
+           stat = "identity",
+           bins = 15) +
+  theme_minimal() +
+  labs(x = "Year",
+       y = "Number of Hare Traps") +
+  theme(plot.title = element_text(color = "gray20", face = "bold", hjust = 0.5),
+        axis.title.x = element_text(color = "gray20", face = "bold"),
+        axis.title.y = element_text(color = "gray20", face = "bold")) +
+  scale_x_continuous(breaks = 1999:2012)
+```
+
+**Figure 1**: Count of annual juvenile hare traps from 1999 to 2002 at Bonanza Creek LTER from Kielland, K., et al, (2017). 
+
+```{r}
+harecount_min <- min(bonanza_hares_count$n) # Find min
+
+harecount_max <- max(bonanza_hares_count$n) # Find max
+
+harecount_mean <- mean(bonanza_hares_count$n) # Find mean
+```
+
+The minimum counts of juvenile hare trappings is `r harecount_min` and the maximum count is `r harecount_max`. The mean juvenile hare trappings count is `r harecount_mean`. There is a general downwards trends in the number of juvenile hare trappings, especially between the years 2000 - 2001. No hares were trapped in 2002 and 2009. It would be recommended to standardize the trapping collection process to ensure accurate data.
+
+
+#### B. Visualize juvenile Snowshoe hare weights 
+
+
+```{r}
+# Clean and wrangle data
+bonanza_hares_weights <- bonanza_hares %>%
+  filter (age == "j") %>%
+  mutate(sex_full = case_when(
+    sex == "m" ~ "Male",
+    sex == "f" ~ "Female",
+    sex == "NA" ~ "Not Available")) %>%
+  mutate(grid_full = case_when(
+    grid == "bonrip" ~ "Bonanza Riparian",
+    grid == "bonbs" ~ "Bonbs",
+    grid == "bonmat" ~ "Bonanza Mature",
+  )) %>%
+  select(sex_full, weight, grid_full)
+
+# Graph data
+ggplot(data = bonanza_hares_weights, aes(x = sex_full, y = weight)) +
+  geom_beeswarm(aes(color = sex_full), width = 3) +
+  facet_grid(~ grid_full) +
+  scale_color_manual(values = c("violetred", "cadetblue", "gray55")) +
+  geom_boxplot(fill = NA, width = .3, outlier.color = NA) +
+  stat_summary(fun = mean,
+               geom = "point",
+               shape = 18,
+               size = 4,
+               color = "black",
+               fill = "black") +
+  theme_minimal() +
+  labs(x = "Hare Sex",
+       y = "Hare Weight (g)",
+       color = "Sex") +
+   theme(axis.title.x = element_blank(),
+        axis.title.y = element_text(face = "italic"))
+```
+
+**Figure 2**: Juvenile Snowshoe hare weights by sex at Bonanza Riparian, Bonanza Mature, and Bonbs in Bonanza Creek LTER from Kielland, K., et al, (2017).
+
+Figure 2 is communicating how the sex of the hare and the location affects hare weights. From this visualization, it appears that sex does not have an impact on weights in juvenile hares since the means are similar for male and female hares. The visualization also shows that there is more data in the Bonanza Riparian grid vs the Bonbs grid, and that sex was not recorded for all data points.
+
+#### C. Juvenile Snowshoe hare weight comparison 
+
+**Table 1**: Descriptive statistics (mean, standard deviation, and sample size) for juvenile hares by sex in Bonanza Creek LTER from Kielland, K., et al, (2017). 
+
+```{r}
+# Clean data and pull in stats
+bonanza_hares_weights_summary <- bonanza_hares_weights %>%
+  group_by(sex_full) %>%
+  summarize(mean_size = round(mean(weight, na.rm = TRUE), 1),
+            median = round(median(weight, na.rm = TRUE), 2),
+            standard_deviation = round(sd(weight, na.rm = TRUE), 1),
+            sample_size = n()) 
+
+# Create stats summary
+kable(bonanza_hares_weights_summary, col.names = c("Sex", "Mean Size", "Median", "Standard Deviation", "Sample Size")) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE)
+
+```
+
+```{r, include=FALSE}
+# T-test code: 
+
+# Pull vectors of weights for male & female hares
+
+m_hares <- bonanza_hares_weights %>% # Starting with male weights
+  filter(sex_full == "Male") %>% 
+  drop_na(weight) %>% # Dropping weights with na
+  pull(weight)
+
+f_hares <- bonanza_hares_weights %>% 
+  filter(sex_full == "Female") %>% 
+  drop_na(weight) %>% # Dropping weights with na
+  pull(weight)
+
+# Plot histograms & qq-plots to check assumptions
+hist(m_hares) # Looks normal
+qqnorm(m_hares) # Relatively linear
+hist(f_hares) # Possibly a bit negatively skewed
+qqnorm(f_hares) # Looks very linear
+
+# Overall: assumptions of normality hold, & sample size additionally >> Central Limit Theorem (means will be normally distributed). Two-sample t-test OK for means comparison! 
+
+# Run the t-test:
+hares_ttest <- t.test(m_hares, f_hares)
+
+# Get the tidy model results to call outputs in-line: 
+hares_ttest_tidy <- tidy(hares_ttest)
+
+# Get the means & SDs for each: 
+male_mean <- mean(m_hares, na.rm = TRUE)
+female_mean <- mean(f_hares, na.rm = TRUE)
+male_sd <- sd(m_hares, na.rm = TRUE)
+female_sd <- sd(f_hares, na.rm = TRUE)
+
+# Get the effect size: 
+hares_effsize <- cohen.d(m_hares, f_hares)
+```
+
+On average, juvenile male Snowshoe hares weigh more than juvenile female Snowshoe hares (`r round(male_mean,2)` $\pm$ `r round(male_sd, 2)` and `r round(female_mean,2)` $\pm$ `r round(female_sd, 2)` g, respectively; mean $\pm$ 1 standard deviation). While the absolute difference in means is `r round(male_mean, 2) - round(female_mean, 2)` g (a `r round((male_mean - female_mean)/((male_mean + female_mean)/2)*100, 2)`% difference), the difference in means is significant (Welch's two-sample t-test: t(`r round(hares_ttest_tidy$parameter,2)`) = `r round(hares_ttest_tidy$statistic,2)`, p = `r round(hares_ttest_tidy$p.value,3)`), and the effect size is moderate (Cohen's *d* = `r round(hares_effsize$estimate,2)`).
+
+#### D. Relationship between juvenile Snowshoe hare weight and hind length
+
+```{r}
+# Clean data
+bonanza_hares_hind <- bonanza_hares %>%
+  filter (age == "j") %>%
+  select(weight, hindft)
+
+# Create graph
+ggplot(data = bonanza_hares_hind, aes(x = weight, y = hindft)) +
+  geom_point(color = "coral3", fill = "black", size = 2) + 
+  geom_smooth(method = "lm", color = "gray40") +
+  theme_minimal() +
+  labs(x = "Weight of Hares (g)",
+       y = "Hind Foot Length (mm)") +
+  theme(legend.position = c(0, 1600))
+
+# Do linear regression
+bonanza_hares_hind_lm <- lm(weight ~ hindft, data = bonanza_hares_hind)
+
+
+# Get tidy versions of the model output to call later on in text
+bonanza_hares_hind_lm_tidy <- tidy(bonanza_hares_hind_lm)
+bonanza_hares_lm_glance <- glance(bonanza_hares_hind_lm)
+
+# See model diagnostics:
+# plot(bonanza_hares_hind_lm)
+
+# Get Pearson's r correlation
+hares_cor <- cor.test(bonanza_hares_hind$weight, bonanza_hares_hind$hindft)
+
+# Tidy version of correlation output:
+hares_cor_tidy <- tidy(hares_cor)
+```
+
+**Figure 3**: The relationship between hind foot length (mm) and weight (g) for juvenile Snowshow hares at Bonanza Creek LTER. Linear model summary: $\beta$~1~ = `r round(bonanza_hares_hind_lm_tidy$estimate[2], 2)` g mm^-1^, p < 0.001, R^2^ = `r round(bonanza_hares_lm_glance$r.squared,2)`, Pearson's *r* = `r round(hares_cor_tidy$estimate,2)`). Data: Kielland et al. (2017).
+
+
+The relationship between juvenile snowshoe hare weight and hind foot length initially seem linear (Figure 3). Simple linear regression reveals that juvenile Snowshoe hare hind foot length does not strongly predict juvenile snowshoe hare weight (p < 0.001, R^2^ = `r round(bonanza_hares_lm_glance$r.squared,2)`) with an average slope of $\beta$ = `r round(bonanza_hares_hind_lm_tidy$estimate[2], 2)` g mm^-1^ (i.e., for each millimeter increase in hind foot length we expect an average increase in weight of `r round(bonanza_hares_hind_lm_tidy$estimate[2], 2)` g). Hind foot length and weight are moderately and positively correlated (Pearson's *r* = `r round(hares_cor_tidy$estimate,2)`, p < 0.001). Diagnostic plots (not included) reveal normally distributed and homoscedastic residuals. I would suspect this model would require a logarithmic regression due to its shape, but further investigation is required.
+
+
+### 4. Summary
+
+Exploratory data analysis reveals the following initial findings:
+
+- The number of juvenile hares trapped between 1999 and 2012 has decreased significantly
+- Juvenile hares weight does not vary much between males and females
+- The most data was collected on the Bonanza Riparian grid for male and female juvenile hares 
+- Juvenile hare weight vs hind foot length linear model summary: $\beta$~1~ = `r round(bonanza_hares_hind_lm_tidy$estimate[2], 2)` g mm^-1^, p < 0.001, R^2^ = `r round(bonanza_hares_lm_glance$r.squared,2)`, Pearson's *r* = `r round(hares_cor_tidy$estimate,2)`)
+
+Next steps:
+
+- Complete multiple regression to fully understand the relationship between sex, weight, sampling site, and hind foot length.
+- Update sampling measures to ensure data is complete and accurate.
+
+
+### 5. Citations
+
+Kielland, K., F.S. Chapin, R.W. Ruess, and Bonanza Creek LTER. 2017. Snowshoe hare physical data in Bonanza Creek       Experimental Forest: 1999-Present ver 22. Environmental Data Initiative.                             https://doi.org/10.6073/pasta/03dce4856d79b91557d8e6ce2cbcdc14 (Accessed 2021-11-07). 
+
+Kielland, K., F.S. Chapin, R.W. Ruess, and Bonanza Creek LTER. 2017. Study Sites & Design: Bonanza Creek Experimental   Forest. Environmental Data Initiative. https://www.lter.uaf.edu/research/study-sites-bcef. (Accessed 2021-11-07). 
+
+R Core Team (2021). R: A language and environment for statistical computing. R Foundation for Statistical
+Computing, Vienna, Austria. URL https://www.R-project.org/.
+
+
+

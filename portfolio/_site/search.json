@@ -1,0 +1,20 @@
+{
+  "articles": [
+    {
+      "path": "about.html",
+      "title": "About this blog",
+      "description": "Some additional details about the blog",
+      "author": [],
+      "contents": "\n\n\n\n",
+      "last_modified": "2022-02-20T17:55:46-08:00"
+    },
+    {
+      "path": "index.html",
+      "title": "Portfolio",
+      "author": [],
+      "contents": "\n\n\n\n",
+      "last_modified": "2022-02-20T17:55:47-08:00"
+    }
+  ],
+  "collections": ["posts/posts.json"]
+}

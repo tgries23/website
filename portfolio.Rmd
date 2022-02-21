@@ -1,12 +1,8 @@
 ---
 title: "portfolio"
+listing: portfolio
 output:
   distill::distill_article:
     self_contained: false
 ---
 
-## [Data Visualization in R](http://nickstrayer.me/visualization_in_r/)
-
-- An RMarkdown presentation on the common mistakes made in visualization and how to fix them.
-- Includes a GitHub repo for access to all the code.
-- Look at how high quality my work is, hire and or collaborate with me. 
