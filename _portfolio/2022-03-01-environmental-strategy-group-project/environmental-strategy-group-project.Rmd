@@ -1,0 +1,23 @@
+---
+title: "Environmental Strategy Group Project"
+description: |
+  In this assignment, five MESM students were randomly assigned to a team to create an environmental strategy for a specific sustainability initiative. The team brainstormed an idea, researched the company and environmental problem, and wrote the complete report over four weeks. The assignment was completed purely for educational purposes for ESM 210: Business and the Environment. 
+author:
+  - name: Taylor Gries
+    url: {}
+date: 2022-03-01
+output:
+  distill::distill_article:
+    self_contained: false
+    code_folding: hide 
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+In this assignment, five MESM students were randomly assigned to a team to create an environmental strategy for a specific sustainability initiative. The team brainstormed an idea, researched the company and environmental problem, and wrote the complete report over four weeks. The assignment was completed purely for educational purposes for ESM 210: Business and the Environment. 
+
+**<a href = "Environmental Strategy Proposal - Tampax.pdf" target = ‘blank’>click here for PDF of the report</a>**
+

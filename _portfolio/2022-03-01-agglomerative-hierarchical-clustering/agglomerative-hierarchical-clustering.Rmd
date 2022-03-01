@@ -1,0 +1,153 @@
+---
+title: "Agglomerative Hierarchical Clustering"
+description: |
+  This code will use hierarchical clustering by complete linkage to create a dendrogram showing multivariate clustering for water chemistry by site.
+author:
+  - name: Taylor Gries
+    url: {}
+date: 2022-03-01
+output:
+  distill::distill_article:
+    self_contained: false
+    code_folding: hide 
+---
+
+
+# Overview
+
+This code will use hierarchical clustering by complete linkage to create a dendrogram showing multivariate clustering for water chemistry by site. This data looks at Santa Barbara Coastal drainage are and has been ongoing since 2000. 
+
+## Variables
+
+- Total Dissolved Nitrogen uM
+- Total Dissolved Phosphorus uM
+- Total Particulate Carbon micromolesPerLiter
+- Total Particulate Nitrogen micromolesPerLiter
+- Total Suspended Solids (milligramPerLiter)
+
+
+**Data Citation:** Santa Barbara Coastal LTER and J. Melack. 2019. SBC LTER: Land: Stream chemistry in the Santa Barbara Coastal drainage area, ongoing since 2000 ver 16. Environmental Data Initiative. 
+
+```{r setup, include=TRUE, message =FALSE, warning = FALSE, echo = TRUE, error= TRUE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+
+library(tidyverse)
+library(janitor)
+library(here)
+library(naniar)
+ 
+# Packages for cluster analysis:
+library(NbClust)
+library(cluster)
+library(factoextra)
+library(dendextend)
+library(ggdendro)
+```
+
+
+```{r}
+stream_chem <- read_csv( "sbc_lter_registered_stream_chemistry.csv")
+```
+
+# Data Wrangling
+
+To perform hierarchical clustering by site, I made a data frame that has a single summary row per site (e.g. based on means from all observations at that site). Then, I calculated the Euclidean distance before performing complete linkage agglomerative hierarchical clustering. 
+
+```{r}
+stream_chem_clean <- stream_chem %>%
+  na_if(-999) %>%
+  clean_names() %>%
+  group_by(site_code) %>%
+  select(site_code, nh4_u_m:spec_cond_u_spercm) %>%
+  summarize(
+    "Ammonium" = mean(nh4_u_m, na.rm = TRUE),
+    "Nitrate" = mean(no3_u_m, na.rm = TRUE),
+    "Phosphorous" = mean(po4_u_m, na.rm = TRUE),
+    "Dissolved Nitrogen" = mean(tdn_u_m, na.rm = TRUE),
+    "Dissolved Phosphorous" = mean(tdp_u_m, na.rm = TRUE),
+    "Particulate Carbon" = mean(tpc_u_m, na.rm = TRUE),
+    "Particulate Nitrogen" = mean(tpn_u_m, na.rm = TRUE),
+    "Particulate Phosphorous" = mean(tpp_u_m, na.rm = TRUE),
+    "Suspended Solids" = mean(tss_mgper_liter, na.rm = TRUE),
+    "Specific Conductivity" = mean(spec_cond_u_spercm, na.rm = TRUE))
+```
+
+
+```{r}
+stream_chem_scale <- stream_chem_clean %>% 
+  select(-site_code) %>%
+  scale() # See ?scale for details on scaling
+
+# compare scaled to original vars
+summary(stream_chem_scale)
+```
+
+# Dendrogram 
+
+## Complete Linkage
+
+```{r}
+rownames(stream_chem_scale) <- stream_chem_clean$site_code # adding rownames from original dataset
+```
+
+**Figure 1**: A cluster dendrogram that illustrates water chemistry by site using complete linkage - the clusters are merged by the smallest **maximum** distance between two observations in distinct clusters. *Data: Santa Barbara Coastal LTER and J. Melack. (2019)*
+
+
+```{r}
+stream_chem_dist <- dist(stream_chem_scale, method = 'euclidean') 
+
+# Hierarchical clustering (complete linkage)
+stream_hc_complete <- hclust(stream_chem_dist, method = "complete")
+
+
+# Pretty plot
+ggdendrogram(stream_hc_complete, 
+             rotate = TRUE) +
+  theme_minimal() +
+  labs(title = "Water Chemistry by Site (Complete Linkage)",
+       x = "Stream Site",
+       y = "Height",
+       caption = "Data: Santa Barbara Coastal LTER and J. Melack (2019).")
+
+```
+
+
+## Single Linkage
+
+**Figure 2**: Cluster dendrogram for illustrating water chemistry by site using single linkage - the clusters are merged by the *smallest* distance between observations in separate clusters. *Data: Santa Barbara Coastal LTER and J. Melack. (2019)*
+
+
+```{r}
+# Hierarchical clustering (single linkage)
+stream_hc_single <- hclust(stream_chem_dist, method = "single")
+
+
+# Pretty plot
+ggdendrogram(stream_hc_single, 
+             rotate = TRUE) +
+  theme_minimal() +
+  labs(title = "Water Chemistry by Site (Single Linkage)",
+       x = "Stream Site",
+       y = "Height",
+       caption = "Data: Santa Barbara Coastal LTER and J. Melack (2019).")
+
+```
+
+
+# Results
+
+- There is a large mean concentration of Ammonium in stream 4 (DV01) which is the largest grouping
+
+- There are 3 sites in one of these two sub-groupings that all have high Ammonium concentrations compared to other sites. 
+
+- Since 9 out of 13 sites fit into one sub-grouping, this could mean the variables are correlated in some way for most of the sites.
+
+- All other sites are included in a grouping with at least two sub-groupings.
+
+- Further investigation is needed for streams not included in the larger sub-groups. 
+
+# Citations
+
+**Data Citation:** Santa Barbara Coastal LTER and J. Melack. 2019. SBC LTER: Land: Stream chemistry in the Santa Barbara Coastal drainage area, ongoing since 2000 ver 16. Environmental Data Initiative. 
+
+

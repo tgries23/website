@@ -1,0 +1,112 @@
+---
+title: "Data Visualization: Mono Lake Water Levels from 1850 - 2017"
+description: |
+  This code wrangles data relating to Mono Lake water levels from 1850 to 2017.
+author:
+  - name: Taylor Gries
+    url: {}
+date: 2022-03-01
+output:
+  distill::distill_article:
+    self_contained: false
+    code_folding: hide
+---
+
+
+
+```{r setup, message = FALSE, warning = FALSE, echo = TRUE}
+# Load in packages
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+library(tidyverse)
+library(here)
+library(janitor)
+library(GGally)
+library(kableExtra)
+library(modelsummary)
+library(stargazer)
+library(effsize)
+```
+
+```{r, include = FALSE}
+mono_lake <- read_csv("mono_lake_annual_levels.csv", skip = 5)
+```
+
+
+```{r, include=FALSE}
+mono_lake_clean <- mono_lake %>%
+  clean_names() # Clean column names
+```
+
+
+```{r}
+ggplot(data = mono_lake_clean, aes(x = year, y = lake_level_feet_above_sea_level)) + # Create line graph
+  geom_line(color = "darkblue", 
+            size = 0.4) + # Change color and size of lake level data
+  scale_x_continuous(limits = c(1850, 2020),
+                     expand = c(0,0),
+                     breaks = seq(1850, 2020, by = 25)) + # Fix x grid
+  scale_y_continuous(limits = c(6372, 6428),
+                     expand = c(0,0),
+                     breaks = seq(6370, 6430, by = 10)) + # Fix y grid
+  theme_minimal() + # Change theme 
+  labs(x = "Year", # Add in plot labels
+       y = "Water Level (Ft above Sea Level)",
+       title = "Annual Mono Lake Water Levels: 1850 - 2017",
+       caption = "Data: Mono Basin Clearinghouse") +
+  theme(axis.title.x = element_text(size = 10, # Edit text 
+                                    hjust = 0.5),
+        axis.title.y = element_text(size = 10, 
+                                    hjust = 0.5),
+        plot.title = element_text(size = 14, 
+                                  hjust = 0.5)) +
+    geom_hline(yintercept = 6392, # Add in stable water level line
+               linetype = "solid", 
+               color = "darkgreen",
+               size = 0.5) +
+  geom_text(x = 1852, y = 6390, # Add in stable water level text
+            label = "Stable Lake Level at 6,392 ft",
+            color = "darkgreen",
+            size = 3,
+            hjust = 0,
+            vjust = 0.5) +
+  geom_hline(yintercept = 6377, # Add in Land Bridge line
+             linetype = "dashed",
+             color = "darkred",
+             size = 0.5) +
+  geom_text(x = 1852, y = 6375, 
+            label = "Land Bridges Emerge at 6,377 ft", # Add in Land Bridge text
+            color = "darkred",
+            size = 3,
+            hjust = 0,
+            vjust = 0.5) +
+  annotate("text", label = "1941: LA DWP Begins Diverting Water", # Add in historical event text
+           x = 1950,
+           y = 6420,
+           size = 2.5,
+           vjust = 0,
+           hjust = 0.15) +
+  geom_point(aes(x = 1941, y = 6417), # Add in point for historical event
+             size = 1) +
+  annotate("text", label = "1976: First Ecological Study", # Add in historical event text
+           x = 1965,
+           y = 6380,
+           size = 2.5,
+           vjust = .1,
+           hjust = .8) +
+  geom_point(aes(x = 1976, y = 6378), # Add in point for historical event
+             size = 1) +
+  annotate("text", label = "1998: State Issued Restoration Orders", # Add in historical event text
+           x = 1995,
+           y = 6388,
+           size = 2.5,
+           vjust = .2,
+           hjust = .45) +
+  geom_point(aes(x = 1998, y = 6384.4), # Add in point for historical event
+             size = 1)
+```
+
+**Figure 1:** Mono Lake levels have plumented since 1941 in a 40 year time span due to the Los Angeles Department of Water & Power (DWP) diverting water, causing the lake to los half its volume and doubling in salinity. Once students discovered the ecological collapse in 1976, action has been taken to decrease land bridges causing a decline in bird nesting sites and to increase food resources for aquatic birds. 
+
+
+
+
